@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="id">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek Kolaborasi 11 Mapel - Smart Digital School</title>
+    <style>
+        /* ==========================================================================
+           9. MAPEL SENI BUDAYA: Kombinasi Warna Estetik & Tipografi Modern
+           (Paduan Hijau Alam #2ecc71 & Biru Teknologi #2c3e50, Font Modern)
+           ========================================================================== */
+        :root {
+            --hijau-alam: #2ecc71;
+            --hijau-tua: #27ae60;
+            --biru-teknologi: #2c3e50;
+            --biru-muda: #3498db;
+            --bg-ringan: #f4f6f7;
+            --putih: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-ringan);
+            color: var(--biru-teknologi);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--hijau-tua), var(--biru-teknologi));
+            color: var(--putih);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--hijau-alam);
+        }
+
+        .jargon-eng {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #eaeff2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            background-color: var(--biru-teknologi);
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--putih);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--hijau-alam);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Gaya Khusus Section Mapel */
+        .section-mapel {
+            background-color: var(--putih);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--biru-teknologi);
+        }
+
+        .border-green { border-left-color: var(--hijau-tua); }
+        .border-blue { border-left-color: var(--biru-muda); }
+
+        .tag-mapel {
+            display: inline-block;
+            background-color: #e8f8f5;
+            color: var(--hijau-tua);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .tag-mapel.tech {
+            background-color: #ebf5fb;
+            color: var(--biru-muda);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--biru-teknologi);
+        }
+
+        /* --- 3. MAPEL MATEMATIKA: Grafik Batang Manual HTML/CSS --- */
+        .chart-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .bar-item {
+            margin-bottom: 15px;
+        }
+
+        .bar-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .bar-track {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            height: 22px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .fill-12 { background-color: var(--hijau-tua); width: 40%; }
+        .fill-15 { background-color: var(--biru-muda); width: 50%; }
+        .fill-3  { background-color: #e74c3c; width: 10%; }
+
+        /* --- 5. MAPEL INFORMATIKA & 4. MAPEL TKJ: Elemen Interaktif --- */
+        .btn-interaktif {
+            background-color: var(--biru-muda);
+            color: var(--putih);
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s, transform 0.1s;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn-interaktif:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-interaktif:active {
+            transform: scale(0.98);
+        }
+
+        .iot-box {
+            background-color: #ebf5fb;
+            border: 1px solid var(--biru-muda);
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 12px;
+            display: inline-block;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: var(--hijau-alam);
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
+        /* Jargon Box Khusus English */
+        .jargon-box {
+            background-color: #f8f9fa;
+            border: 1px dashed var(--biru-muda);
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Struktur Teks Indonesia Box */
+        .struktur-list {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .struktur-list li {
+            margin-bottom: 8px;
+        }
+
+        /* --- 10. MAPEL SEJARAH: Footer Desain --- */
+        footer {
+            background-color: var(--biru-teknologi);
+            color: #bdc3c7;
+            padding: 30px 20px;
+            margin-top: 50px;
+            border-top: 4px solid var(--hijau-tua);
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Pengaturan Ukuran Judul Utama (Tampilan Laptop/Desktop) */
+        header h1 {
+            font-size: 3.5rem; /* Mengubah ukuran tulisan menjadi jauh lebih besar */
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Responsif HP (Ukuran otomatis mengecil di HP agar tidak terpotong) */
+        @media (max-width: 768px) {
+            header h1 { 
+                font-size: 2.2rem; /* Ukuran khusus di layar HP */
+                padding: 0 10px;
+            }
+            nav a { display: inline-block; margin: 5px 8px; font-size: 0.75rem; }
+            .section-mapel { padding: 20px; }
+        }
+
+        /* ==========================================================================
+   EFEK DESAIN DAUN BERGERAK JATUH
+   ========================================================================== */
+.daun {
+    position: fixed;
+    top: -20px;
+    font-size: 24px;
+    z-index: 9999;
+    user-select: none;
+    pointer-events: none;
+    animation: jatuh linear infinite;
+}
+
+/* Mengatur posisi horizontal awal, kecepatan, dan jeda tampil setiap daun */
+.daun:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; }
+.daun:nth-child(2) { left: 30%; animation-duration: 12s; animation-delay: 2s; }
+.daun:nth-child(3) { left: 55%; animation-duration: 10s; animation-delay: 1s; }
+.daun:nth-child(4) { left: 75%; animation-duration: 14s; animation-delay: 3s; }
+.daun:nth-child(5) { left: 90%; animation-duration: 9s; animation-delay: 5s; }
+
+/* Logika pergerakan animasi dari atas ke bawah sambil berputar */
+@keyframes jatuh {
+    0% {
+        top: -50px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        top: 105vh;
+        transform: translateX(80px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   EFEK DESAIN SAMPAH BERGERAK JATUH
+   ========================================================================== */
+.sampah {
+    position: fixed;
+    top: -20px;
+    font-size: 26px; /* Ukuran sampah sedikit lebih besar agar terlihat jelas */
+    z-index: 9998; /* Di bawah daun sedikit agar layernya bagus */
+    user-select: none;
+    pointer-events: none;
+    animation: sampahJatuh linear infinite;
+    opacity: 0.6; /* Dibuat sedikit transparan agar tetap estetik dan tidak menutupi teks */
+}
+
+/* Mengatur posisi horizontal awal, kecepatan (durasi), dan jeda (delay) agar acak */
+.sampah:nth-child(6) { left: 20%; animation-duration: 11s; animation-delay: 1s; }
+.sampah:nth-child(7) { left: 40%; animation-duration: 15s; animation-delay: 3s; }
+.sampah:nth-child(8) { left: 65%; animation-duration: 9s; animation-delay: 0s; }
+.sampah:nth-child(9) { left: 80%; animation-duration: 13s; animation-delay: 4s; }
+.sampah:nth-child(10) { left: 95%; animation-duration: 10s; animation-delay: 2s; }
+
+/* Logika pergerakan animasi sampah dari atas ke bawah meluncur */
+@keyframes sampahJatuh {
+    0% {
+        top: -50px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        top: 105vh;
+        transform: translateX(-60px) rotate(-360deg); /* Berputar ke arah sebaliknya dari daun */
+        opacity: 0;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="daun">🍃</div>
+<div class="daun">🌿</div>
+<div class="daun">🍃</div>
+<div class="daun">🌱</div>
+<div class="daun">🍃</div>
+
+<div class="sampah">🗑️</div>
+<div class="sampah">🥫</div>
+<div class="sampah">📄</div>
+<div class="sampah">🗑️</div>
+
+    <header>
+        <h1><i class="fas fa-trash-alt" style="margin-right: 15px; opacity: 0.9;"></i>Smart Digital School<i class="fas fa-trash-alt" style="margin-left: 15px; opacity: 0.9;"></i></h1>
+        <p>Sistem Pengelolaan Sampah Sekolah Terintegrasi</p>
+        <p class="jargon-eng">"Green Technology, Clean Community: Empowering Tomorrow's Eco-School!"</p>
+    </header>
+
+    <!-- Menu Navigasi Bilingual -->
+    <nav>
+        <a href="#solusi-spiritual">Spiritual (Agama)</a>
+        <a href="#solusi-bahasa">Language (Bahasa Inggris)</a>
+        <a href="#solusi-data">Data Dashboard (Matematika)</a>
+        <a href="#solusi-teknis">Smart System (TKJ & Informatika)</a>
+        <a href="#solusi-alam">Ecosystem & Health (IPAS & PJOK)</a>
+        <a href="#solusi-hukum">Regulation (Pancasila)</a>
+        <a href="#solusi-bahasa-id">Laporan (Bahasa Indonesia)</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- --- 7. MAPEL PENDIDIKAN AGAMA & BUDI PEKERTI --- -->
+        <section class="section-mapel border-green" id="solusi-spiritual">
+            <span class="tag-mapel">1. Pendidikan Agama & Budi Pekerti</span>
+            <h2>Amanah Manusia dalam Menjaga Kebersihan Bumi</h2>
+            <p style="font-size: 1.1rem; font-style: italic; color: var(--hijau-tua); margin-bottom: 10px;">
+                "Kebersihan adalah Refleksi Keimanan dan Tanggung Jawab Khilafah"
+            </p>
+            <p>وَاِذْ قَالَ رَبُّكَ لِلْمَلٰۤىِٕكَةِ ِانِّيْ جَاعِلٌ فِى الْاَرْضِ خَلِيْفَةًۗ قَالُوْٓا اَتَجْعَلُ فِيْهَا مَنْ يُّفْسِدُ فِيْهَا وَيَسْفِكُ الدِّمَاۤءَۚ وَنَحْنُ نُسَبِّحُ بِحَمْدِكَ وَنُقَدِّسُ لَكَۗ قَالَ اِنِّيْٓ اَعْلَمُ مَا لَا تَعْلَمُوْنَ ۝٣٠
+(Ingatlah) ketika Tuhanmu berfirman kepada para malaikat, “Aku hendak menjadikan khalifah di bumi.” Mereka berkata, “Apakah Engkau hendak menjadikan orang yang merusak dan menumpahkan darah di sana, sedangkan kami bertasbih memuji-Mu dan menyucikan nama-Mu?” Dia berfirman, “Sesungguhnya Aku mengetahui apa yang tidak kamu ketahui.”
+
+Al-Baqarah ayat 30</p>
+        </section>
+
+
+        <!-- --- 6. MAPEL BAHASA INGGRIS --- -->
+        <section class="section-mapel border-green" id="solusi-bahasa">
+            <span class="tag-mapel">2. Bahasa Inggris</span>
+            <h2>English Poster About Waste Management</h2>
+            <img src="poster basing.jpeg" alt="Foto Poster">
+        </section>
+
+
+        <!-- --- 3. MAPEL MATEMATIKA --- -->
+        <section class="section-mapel border-blue" id="solusi-data">
+            <span class="tag-mapel tech">3. Matematika</span>
+            <h2>Analisis Statistik Kesadaran Memilah Sampah Siswa</h2>
+            <p><strong>Laporan Data:</strong> Berdasarkan pengumpulan data melalui survei yang melibatkan <strong>40 siswa responden</strong>, diperoleh hasil mengenai tingkat kesadaran warga sekolah dalam memilah sampah:</p>
+            
+            <div class="chart-box">
+                <div class="bar-item">
+                    <div class="bar-info"><span>Selalu Memilah (16 Siswa)</span><span>40%</span></div>
+                    <div class="bar-track"><div class="bar-fill fill-12">16 Siswa (40%)</div></div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-info"><span>Kadang-kadang (20 Siswa)</span><span>50%</span></div>
+                    <div class="bar-track"><div class="bar-fill fill-15">20 Siswa (50%)</div></div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-info"><span>Tidak Pernah (4 Siswa)</span><span>10%</span></div>
+                    <div class="bar-track"><div class="bar-fill fill-3">4 Siswa (10%)</div></div>
+                </div>
+            </div>
+            <p style="margin-top: 12px; font-size: 0.9rem; color: #7f8c8d;">
+                <em>Kesimpulan Statistika:</em> Mayoritas siswa (50%) masih berada pada kategori ragu-ragu/kadang-kadang. Hal ini membuktikan perlunya intervensi teknologi digital untuk mempermudah proses pemilahan.
+            </p>
+        </section>
+
+
+        <!-- --- 4. MAPEL TKJ (KOMPUTER & JARINGAN) --- -->
+        <section class="section-mapel border-blue" id="solusi-teknis">
+            <span class="tag-mapel tech">4. Teknik Komputer & Jaringan (TKJ)</span>
+            <h2>Komunikasi dan Kolaborasi Kerja (Unsur Kejuruan TKJ)</h2>
+            <p>Proyek ini menerapkan unsur kejuruan TKJ melalui pembuatan website pengelolaan sampah sebagai media edukasi kebersihan sekolah. Proses pengerjaannya dilakukan secara kolaboratif, mulai dari diskusi penentuan konsep hingga pembagian tugas sesuai keahlian masing-masing anggota. Melalui kolaborasi kerja ini, kami tidak hanya berhasil menyelesaikan produk website yang fungsional, tetapi juga melatih komunikasi profesional dan tanggung jawab di dalam tim.</p>
+            
+        </section>
+
+
+        <!-- --- 5. MAPEL INFORMATIKA --- -->
+        <section class="section-mapel border-blue">
+            <span class="tag-mapel tech">5. Informatika</span>
+            <h2>Pemanfaatan Perangkat Lunak dalam Pengembangan Website Proyek</h2>
+            <p>Website proyek kolaborasi ini dikembangkan secara mandiri dengan mengintegrasikan beberapa perangkat lunak utama. Proses pengodean (coding) dan penyusunan struktur halaman website seluruhnya dilakukan menggunakan Visual Studio Code sebagai text editor utama untuk menghasilkan tampilan yang responsif. Guna mendukung fitur interaksi dengan pengguna, website ini menyematkan Google Form sebagai instrumen pengisian data maupun kuis edukasi digital. Sementara itu, untuk melengkapi konten informasi di dalam website, platform Canva dimanfaatkan sebagai media kreatif untuk merancang dan mengedit poster edukatif yang disajikan secara visual di halaman web ini.</p>
+           
+            
+        </section>
+
+
+        <!-- --- 1. MAPEL IPAS --- -->
+        <section class="section-mapel" id="solusi-alam">
+            <span class="tag-mapel">6. Ilmu Pengetahuan Alam & Sosial (IPAS)</span>
+            <h2>Dampak Destruktif Sampah Plastik Terhadap Ekosistem Tanah</h2>
+            <p>Dampak Lingkungan : 
+Penumpukan sampah plastik di sekolah secara ilmiah merusak ekosistem tanah karena polimer sintetik membutuhkan waktu ratusan tahun untuk terurai. Plastik ini menjadi penghalang fisik yang menghambat resapan air (infiltrasi) dan sirkulasi oksigen, sehingga tanah menjadi padat, gersang, dan mematikan mikroorganisme dekomposer alami yang menyuburkan tanaman.</p>
+            <p style="margin-top: 8px;">Dampak Kesehatan : 
+Secara sosial dan kesehatan, tumpukan sampah yang tidak terkelola merusak estetika sekolah serta menjadi sarang lembap bagi vektor penyakit (nyamuk dan kuman) yang mengancam kesehatan siswa. Solusi ilmiahnya adalah menerapkan sistem tempat sampah pintar (Smart Trash Notification) agar sampah anorganik langsung terpisah sejak awal, mudah didaur ulang, dan keasrian lingkungan sekolah tetap terjaga.</p>
+        </section>
+
+
+        <!-- --- 2. MAPEL PJOK --- -->
+        <section class="section-mapel">
+            <span class="tag-mapel">7. Pendidikan Jasmani, Olahraga, & Kesehatan (PJOK)</span>
+            <h2>Risiko Akumulasi Sampah Sebagai Vektor Penyakit Siswa</h2>
+            <p>Dari perspektif kesehatan dan higienitas, pembiaran tumpukan sampah basah maupun genangan air pada sampah plastik merupakan ancaman serius terhadap kondisi fisik siswa. Area yang kotor dan lembap tersebut bertindak sebagai medium ideal bagi perkembangbiakan kuman, bakteri patogen, serta hewan vektor penyakit.</p>
+            <p style="margin-top: 8px;">Tumpukan sampah yang tidak dikelola dengan baik dapat memicu klaster penularan penyakit berbahaya di lingkungan sekolah, seperti Demam Berdarah Dengue (DBD) akibat sarang nyamuk, infeksi saluran pencernaan (diare), hingga infeksi saluran pernapasan akut (ISPA).</p>
+        </section>
+
+
+        <!-- --- 8. MAPEL PENDIDIKAN PANCASILA --- -->
+        <section class="section-mapel" id="solusi-hukum">
+            <span class="tag-mapel">8. Pendidikan Pancasila</span>
+            <h2>Hak Konstitusional Atas Lingkungan Hidup yang Sehat (Pasal 28H UUD 1945)</h2>
+            <p>Mendapatkan lingkungan belajar yang bersih bukan sekadar fasilitas, melainkan hak asasi yang dilindungi oleh hukum tertinggi negara. Berdasarkan **Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 Pasal 28H ayat (1)**, ditegaskan bahwa setiap orang berhak atas lingkungan hidup yang baik dan sehat.</p>
+            <p style="margin-top: 8px; font-weight: bold; color: var(--hijau-tua);">
+                Implementasi Keadilan: Hak konstitusional ini wajib kita tuntut, namun di saat yang sama, kita memikul kewajiban penuh untuk menjaga dan merawat lingkungan sekolah. Keseimbangan antara hak dan kewajiban ini adalah bentuk pengamalan Pancasila demi kenyamanan bersama.
+            </p>
+        </section>
+
+
+        <!-- --- 11. MAPEL BAHASA INDONESIA (BARU: DITAMBAHKAN SECARA VISUAL) --- -->
+        <section class="section-mapel" id="solusi-bahasa-id">
+            <span class="tag-mapel">9. Bahasa Indonesia</span>
+            <h2>Struktur Kebahasaan Teks Eksposisi Laporan Digital</h2>
+            <p><strong>Analisis Kebahasaan:</strong> Seluruh informasi dan data yang disajikan dalam platform website "Smart Digital School" ini diproduksi menggunakan **struktur kalimat eksposisi** yang baik, baku, rasional, dan persuasif. Teks eksposisi di dalam web ini dibangun oleh tiga struktur utama:</p>
+            <ul class="struktur-list">
+                <li><strong>Tesis (Pernyataan Pendapat):</strong> Pengenalan masalah sampah sekolah dan urgensi integrasi teknologi digital yang diletakkan di bagian awal tiap bab.</li>
+                <li><strong>Argumentasi (Fakta Ahli):</strong> Penyajian data statistik empiris dari 40 responden (Matematika) serta landasan ilmiah mengenai kerusakan ekosistem (IPAS) dan bahaya medis (PJOK).</li>
+                <li><strong>Penegasan Ulang (Persuasif):</strong> Seruan konklusif untuk mengajak seluruh warga sekolah melakukan pemilahan sampah demi menjaga kelestarian lingkungan belajar.</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- ==========================================================================
+       10. MAPEL SEJARAH & 9. MAPEL SENI BUDAYA (FOOTER SECTION)
+       ========================================================================== */ -->
+    <footer>
+        <div class="footer-content">
+            <p style="font-weight: bold; margin-bottom: 10px;">10. Sejarah (Catatan Kaki Inovasi Digital) & 11. Seni Budaya Layout</p>
+            <p style="font-size: 0.85rem; text-align: justify; line-height: 1.5; color: #bdc3c7;">
+                <strong>Sejarah Singkat Pemanfaatan Teknologi di Indonesia:</strong> Perkembangan jaringan internet di Indonesia dimulai sejak awal tahun 1990-an melalui inisiatif akademisi dalam "Paguyuban Network". Pada awalnya teknologi ini hanya berfungsi sebagai media berkirim pesan akademis. Namun seiring berjalannya waktu, teknologi digital bertransformasi menjadi instrumen penting untuk memecahkan berbagai problematika sosial, ekonomi, hingga pengelolaan lingkungan hidup. Integrasi sistem IoT dan platform web "Smart Trash" hari ini merupakan bukti historis bahwa generasi muda dapat melanjutkan estafet inovasi digital demi kemaslahatan sosial masyarakat secara gotong royong.
+            </p>
+            <p style="font-size: 0.8rem; margin-top: 15px; color: var(--hijau-alam);">
+                &copy; 2026 Proyek Kolaborasi 11 Mata Pelajaran Kelas X SMK. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function jalankanScanSimulasi() {
+            alert("=== SISTEM SIMULASI QR CODE (INFORMATIKA) ===\n\n[Status: QR Code Valid]\n\nPesan Edukasi:\nSampah Plastik berhasil diidentifikasi. Silakan masukkan ke Tong Anorganik. Data volume telah dikirimkan ke server TKJ lewat jaringan lokal!");
+        }
+    </script>
+</body>
+</html>
